@@ -1,0 +1,49 @@
+<html>
+<head>
+	<title>RON <!--NODENAME--></title>
+	<!--AUTOREFRESH-->
+</head>
+
+<body>
+<table width=100%><tr>
+<td><h2>RON <!--NODENAME--></h2></td>
+<td align=right><a href='/index.htm'>manual</a><br><a href='/indexauto.htm'>auto</a></td>
+</tr></table>
+General Info:
+
+<table border=1>
+<tr>
+<td>local time</td>
+<td>rnr clients</td>
+<td>stat_clients</td>
+<td>tick</td>
+<td>send_views_timeout</td>
+<td>delay_message_emit</td>
+
+</tr>
+<tr>
+<td><!--TIME--></td>
+<td><!--RNRCLI--></td>
+<td><!--STATCLI--></td>
+<td><!--TICK--></td>
+<td><!--SENDTIMEOUT--></td>
+<td><!--DELAYEMIT--></td>
+</tr>
+</table>
+
+
+
+<br>
+Subscriptions (<!--NSUBSCRIPTIONS-->) (<a href='/snapshotsubs.dot'>snapshot</a>):
+<table border=1>
+<!--SUBSCRIPTIONS-->
+</table>
+
+<br>
+Notifications  (<!--NNOTIFS-->/<!--MAXNOTIFS-->) (<a href='/snapshotnotifs.dot'>snapshot</a>):
+<table border=1>
+<!--MESSAGES-->
+</table>
+<hr>
+</body>
+</html>

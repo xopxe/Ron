@@ -1,4 +1,5 @@
-Ron
+Ron: RAN Opportunistic Network
 ===
 
-RAN Opportunistic Network
+Ron is a opportunistic networking protocol.
+

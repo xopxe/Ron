@@ -1,0 +1,57 @@
+--configuration file for runnings in nctuns
+-- * reads the ip from thenode
+-- * sets an lan broadcast address
+-- * logs to a file
+
+
+--aux
+--ejecuta un s en la consola y devuelve la salida
+local run_shell = function(s)
+	local f = io.popen(s) -- runs command
+	local l = f:read("*a") -- read output of command
+	f:close()
+	return l
+end
+local function get_if_ip(iface)
+	local ifconfig = run_shell("ifconfig	" .. tostring(iface))
+	local ip=string.match(ifconfig, "inet addr:(%S+)") 
+	local bcast=string.match(ifconfig, "Bcast:(%S+)") 
+	return ip, bcast
+end
+--/aux
+
+send_views_timeout = 6
+
+
+save_each 	= 10
+
+local ifname = arg[2] or "eth0"
+my_name = "node_" ..ifname
+service_ip, broadcast_address   = get_if_ip(ifname)
+
+--broadcast_address="255.255.255.255"
+inventory_size = 5
+reserved_owns=2
+
+---[[
+socket=require('socket')
+local logfile = assert(io.open("ron_" ..my_name..".log","w"))
+logfile:write(socket.gettime(), "\tStarted logging\n") 
+log 	= function(...) 
+		print(...)
+		--logfile:write(os.time())
+		logfile:write(socket.gettime())  
+		for i=1, select("#", ...) do			
+			local arg=select(i, ...)
+			logfile:write("\t", tostring(arg)) 
+		end
+		logfile:write("\n")
+		logfile:flush()
+	  end
+--]]
+
+if not arg[2] then log("WARN: Missing node id") end
+log("configuration: ifname", ifname)
+log("configuration: service_ip", service_ip)
+log("configuration: broadcast_address", broadcast_address)
+
