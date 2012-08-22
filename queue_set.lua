@@ -9,7 +9,7 @@ function QueueSet.pushleft (list, value)
    local first = list.first - 1
    list.first = first
    list[first] = value
-   inventory[value] = true
+   list.inventory[value] = true
 end
 
 function QueueSet.pushright (list, value)

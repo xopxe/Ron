@@ -3,12 +3,13 @@
 --package.path=package.path..";/usr/local/nctuns/tools/?.lua"
 
 local configuration = require("configuration")
-if arg[1] then configuration.load(arg[1]) end
+if _G.arg[1] then configuration.load(_G.arg[1]) end
 local networking = require("networking")
 local parser = require("parser")
 local m_s_tables=require("m_s_tables")
 --local ranking = require("ranking")
 local wmonitor = require("wmonitor")
+local socket = require("socket")
 local savefile = io.open('data.save', 'r')
 if configuration.save_each>0 or savefile then dofile('table.save-0.94.lua') end
 

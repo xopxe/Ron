@@ -1,5 +1,8 @@
 module(..., package.seeall);
 
+local configuration = require("configuration")
+local socket = require("socket")
+
 local function mesage_quality(m)
 	local q = 0
 	--accumulated quality for a message
