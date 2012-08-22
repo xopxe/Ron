@@ -2,6 +2,11 @@ module(..., package.seeall);
 
 local dottify = require("dotlua")
 
+local configuration = require("configuration")
+local socket = require("socket")
+local networking = require("networking")
+
+
 local template
 local function load_template ()
 	local served, err = io.open('stats/template.txt', "r")

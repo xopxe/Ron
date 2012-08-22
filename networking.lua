@@ -1,6 +1,7 @@
 module(..., package.seeall);
 
-local socket=socket or require('socket')
+local configuration = require("configuration")
+local socket = require("socket")
 
 local sha1, sign_message, verify_message
 if configuration.use_sha1 then

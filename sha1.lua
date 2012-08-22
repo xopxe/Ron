@@ -1,6 +1,6 @@
 --[[
 
- Copyright 20011 MINA Group, Facultad de Ingenieria, Universidad de la
+ Copyright 2011 MINA Group, Facultad de Ingenieria, Universidad de la
 Republica, Uruguay.
 
  This file is part of the RAN System.
@@ -77,6 +77,8 @@ Republica, Uruguay.
 -------------------------------------------------------------------------------
 
 module(..., package.seeall);
+
+local configuration = require("configuration")
 
 print("Initializing SHA1 signing")
 
